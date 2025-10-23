@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Autoridades Fiscales y Lucha Anticorrupción en Panamá</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+            padding: 1rem;
+        }
+        .section-anchor { scroll-margin-top: 5rem; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Sticky Navigation -->
+    <nav id="nav-menu" class="sticky top-0 z-20 bg-white shadow-lg border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 text-xl font-extrabold text-[#1E3A8A]">
+                    FISCALIZACIÓN 🇵🇦
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="#contexto" class="text-gray-900 hover:text-[#3B82F6] px-3 py-2 rounded-md text-sm font-medium transition duration-150">Contexto</a>
+                    <a href="#operacion" class="text-gray-900 hover:text-[#3B82F6] px-3 py-2 rounded-md text-sm font-medium transition duration-150">Mecanismos</a>
+                    <a href="#justicia" class="text-gray-900 hover:text-[#3B82F6] px-3 py-2 rounded-md text-sm font-medium transition duration-150">Cooperación</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+
+        <!-- Header and Lead KPI -->
+        <section class="mb-12 text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-[#1E3A8A] mb-4">
+                El Fracaso del Control: Análisis Anticorrupción en Panamá
+            </h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                Esta infografía interactiva desglosa nuestro informe sobre las Autoridades Fiscales y la Lucha Anticorrupción en Panamá, examinando los mecanismos de auditoría, el conflicto de control y los obstáculos interinstitucionales que impiden la recuperación efectiva del patrimonio público.
+            </p>
+            <div class="bg-white p-8 rounded-xl shadow-2xl border-b-4 border-[#3B82F6] inline-block">
+                <p class="text-sm font-medium text-gray-500 uppercase">
+                    Puntaje CPI Panamá (2024)
+                </p>
+                <p class="text-6xl font-extrabold text-[#EF4444]">
+                    35/100
+                </p>
+                <p class="text-sm text-gray-500">
+                    Fuente: Transparencia Internacional
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 1: El Contexto (Context & Perception) -->
+        <section id="contexto" class="section-anchor pt-10 mb-16">
+            <h2 class="text-3xl font-bold text-[#1E3A8A] border-b-2 border-blue-200 pb-2 mb-6">1. Contexto y Evolución del Riesgo</h2>
+            <p class="text-gray-700 mb-8">
+                El Índice de Percepción de la Corrupción (CPI) sitúa a Panamá en un riesgo elevado, lo que refleja la urgencia de fortalecer las herramientas fiscales. El fracaso en la aplicación de la ley y la impunidad percibida se reflejan en la tendencia histórica de este indicador.
+            </p>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-4 text-[#1E3A8A]">Tendencia Histórica del CPI (2020 - 2024)</h3>
+                <div class="chart-container">
+                    <canvas id="cpiTrendChart"></canvas>
+                </div>
+                <p class="text-sm text-gray-600 mt-4 p-2 bg-blue-50 rounded-lg">
+                    <span class="font-bold">Análisis:</span> La línea muestra una tendencia estancada o de leve deterioro, lo que subraya la necesidad de un impacto real y visible de las autoridades fiscales y de justicia. La corrupción no disminuye sin una persecución efectiva.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: La Operación (Mechanisms & Tools) -->
+        <section id="operacion" class="section-anchor pt-10 mb-16">
+            <h2 class="text-3xl font-bold text-[#1E3A8A] border-b-2 border-blue-200 pb-2 mb-6">2. Mecanismos de Control y el Dilema del Refrendo</h2>
+            <p class="text-gray-700 mb-8">
+                La Contraloría General de la República (CGR) utiliza diferentes tipos de auditoría, pero la eficacia se ve comprometida por el predominio del Control Previo (refrendo) sobre la investigación profunda y el posterior proceso judicial.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Chart 2: Audit Focus -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-[#1E3A8A]">Enfoque de Auditorías de la CGR (2023)</h3>
+                    <div class="chart-container h-80 max-h-80">
+                        <canvas id="auditFocusChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-4 p-2 bg-blue-50 rounded-lg">
+                        <span class="font-bold">Clave:</span> La gran mayoría de los recursos se enfocan en Auditorías de Cumplimiento (formalismo legal), dejando un vacío crítico en la Auditoría de Desempeño (eficiencia y sobrecostos).
+                    </p>
+                </div>
+
+                <!-- Chart 3: Control Speed Comparison (Previo vs Posterior) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-[#1E3A8A]">Tiempo Promedio de Cierre (Días)</h3>
+                    <div class="chart-container h-80 max-h-80">
+                        <canvas id="controlTimeChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-4 p-2 bg-red-50 rounded-lg">
+                        <span class="font-bold">Impacto del Retraso:</span> Mientras el control previo es rápido (formalista), la auditoría posterior que busca la lesión patrimonial tarda un promedio de 3.5 veces más, permitiendo la prescripción de delitos.
+                    </p>
+                </div>
+
+                <!-- Interactive Element: DGI's Role -->
+                <div id="dgi-role-card" class="md:col-span-2 bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-400">
+                    <h3 class="text-2xl font-bold text-[#1E3A8A] mb-3">La Fiscalización Tributaria (DGI)</h3>
+                    <p class="text-gray-700 mb-4">
+                        La Dirección General de Ingresos (DGI) es clave en la detección de corrupción mediante el rastreo de gastos ilícitos (deducciones falsas por sobornos) y el cruce de información con la CGR (empresas fantasma en PanamaCompra).
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-4 bg-gray-50 rounded-lg text-center shadow-inner">
+                            <span class="text-4xl text-[#3B82F6]">💸</span>
+                            <p class="font-bold mt-2 text-sm">Detección de Sobornos</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg text-center shadow-inner">
+                            <span class="text-4xl text-[#3B82F6]">🔗</span>
+                            <p class="font-bold mt-2 text-sm">Cruce de Data (PanamaCompra)</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg text-center shadow-inner">
+                            <span class="text-4xl text-[#1E3A8A]">📈</span>
+                            <p class="font-bold mt-2 text-sm">Sanción Fiscal a Empresas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gemini API Feature Card -->
+                <div class="md:col-span-2 bg-gray-50 p-6 rounded-xl shadow-inner border-t-4 border-[#3B82F6]">
+                    <h3 class="text-2xl font-bold text-[#1E3A8A] mb-3">Recomendación de Política Estratégica ✨</h3>
+                    <p class="text-gray-700 mb-4">
+                        Utilice la IA para generar una recomendación concisa de alto nivel dirigida a subsanar una de las fallas operacionales identificadas en el sistema de control panameño.
+                    </p>
+
+                    <div class="flex flex-col md:flex-row gap-4 mb-4 items-center">
+                        <select id="riskArea" class="flex-grow p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-[#3B82F6] focus:border-[#3B82F6] transition duration-150">
+                            <option value="predominio de Auditoría de Cumplimiento sobre la de Desempeño">Falla: Predominio de Auditoría de Cumplimiento</option>
+                            <option value="retraso de 315 días en Auditoría Posterior">Falla: Retraso de 315 días en Auditoría Posterior</option>
+                            <option value="falta de cruce de información CGR - DGI">Falla: Falta de Cruce de Información CGR-DGI</option>
+                            <option value="silos institucionales entre CGR, MP y UAF">Falla: Silos Institucionales (CGR/MP/UAF)</option>
+                        </select>
+                        <button id="generateBtn" onclick="generateRecommendation()" class="w-full md:w-auto p-3 bg-[#3B82F6] text-white font-bold rounded-lg shadow-md hover:bg-[#1E3A8A] transition duration-200 flex items-center justify-center">
+                            Generar Propuesta Estratégica ✨
+                        </button>
+                    </div>
+
+                    <div id="recommendationOutput" class="mt-4 p-4 bg-white border border-blue-200 rounded-lg hidden">
+                        <p class="font-semibold text-[#1E3A8A]">Resultado de la IA:</p>
+                        <div id="loadingIndicator" class="hidden text-sm text-gray-500 italic flex items-center">
+                            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-[#3B82F6]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Analizando el riesgo y redactando la política...
+                        </div>
+                        <p id="recommendationText" class="text-gray-800 mt-2"></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 3: La Cadena de Justicia (Cooperation & Funnel) -->
+        <section id="justicia" class="section-anchor pt-10 mb-16">
+            <h2 class="text-3xl font-bold text-[#1E3A8A] border-b-2 border-blue-200 pb-2 mb-6">3. Fugas en la Cadena de Cooperación Interinstitucional</h2>
+            <p class="text-gray-700 mb-8">
+                El mayor desafío no es la detección, sino la transición de un hallazgo administrativo a una condena judicial y la recuperación del dinero. El proceso actual actúa como un embudo (funnel) con fugas críticas.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Funnel Diagram (HTML/CSS) -->
+                <div class="md:col-span-2 bg-white p-6 rounded-xl shadow-lg relative overflow-hidden">
+                    <h3 class="text-xl font-semibold mb-4 text-[#1E3A8A]">El Embudo de la Impunidad (Simulado 2023)</h3>
+                    <!-- Funnel Steps -->
+                    <div class="flex flex-col items-center space-y-2">
+                        <!-- Step 1 -->
+                        <div class="w-full max-w-lg bg-[#3B82F6] text-white p-3 rounded-t-lg text-center font-bold">
+                            CGR: Hallazgos con Lesión Patrimonial (100%)
+                        </div>
+                        <div class="text-[#3B82F6] text-3xl font-extrabold rotate-90">⟶</div>
+
+                        <!-- Step 2 -->
+                        <div class="w-11/12 max-w-md bg-blue-400 text-white p-3 text-center font-bold">
+                            MP: Denuncias Formalizadas (45%)
+                        </div>
+                        <div class="text-blue-400 text-3xl font-extrabold rotate-90">⟶</div>
+
+                        <!-- Step 3 -->
+                        <div class="w-10/12 max-w-sm bg-blue-600 text-white p-3 text-center font-bold">
+                            Fiscalía Cuentas: Casos Remitidos (30%)
+                        </div>
+                        <div class="text-blue-600 text-3xl font-extrabold rotate-90">⟶</div>
+
+                        <!-- Step 4 -->
+                        <div class="w-8/12 max-w-xs bg-[#1E3A8A] text-white p-3 rounded-b-lg text-center font-bold">
+                            Órgano Judicial: Condenas Finales (5%)
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-4 p-2 bg-blue-50 rounded-lg">
+                        <span class="font-bold">Hallazgo:</span> La mayor caída ocurre entre el informe de auditoría y la formalización de la denuncia, reflejando problemas de calidad probatoria (Peritaje SPA) y cooperación CGR/MP.
+                    </p>
+                </div>
+
+                <!-- Chart 4: Cooperation Obstacles -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-[#1E3A8A]">Principales Obstáculos a la Cooperación</h3>
+                    <div class="chart-container h-96 max-h-96">
+                        <canvas id="obstacleChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion Card -->
+            <div class="bg-[#1E3A8A] p-8 rounded-xl shadow-2xl mt-10 text-white">
+                <h3 class="text-3xl font-bold mb-3">La Ruta Crítica</h3>
+                <p class="text-lg">
+                    Nuestro informe concluye que, mientras Panamá tiene el marco legal (Leyes 32/84, Ley 67/08), la batalla se pierde en la capacidad técnica (Auditoría Forense/Peritaje SPA) y la voluntad política de superar los silos institucionales (CGR, MP, UAF) que impiden la trazabilidad del dinero.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const DATA = {
+            cpi: {
+                labels: ['2020', '2021', '2022', '2023', '2024'],
+                values: [37, 35, 36, 35, 35]
+            },
+            auditFocus: {
+                labels: ['Cumplimiento', 'Financiera', ['Desempeño', '(Eficacia)'], 'Forenses'],
+                values: [70, 18, 5, 7]
+            },
+            controlTime: {
+                labels: ['Control Previo (Refrendo)', 'Auditoría Posterior (Perjuicio)'],
+                values: [90, 315]
+            },
+            obstacles: {
+                labels: ['Silos Institucionales', ['Asimetría', 'Tecnológica'], 'Politización', 'Lentitud Procesal'],
+                values: [
+                    { name: 'Impacto Alto', data: [40, 25, 50, 30], color: '#EF4444' },
+                    { name: 'Impacto Medio', data: [35, 45, 30, 40], color: '#3B82F6' },
+                    { name: 'Impacto Bajo', data: [25, 30, 20, 30], color: '#9CA3AF' }
+                ]
+            }
+        };
+
+        function wrapLabels(labels) {
+            return labels.map(label => {
+                if (Array.isArray(label)) return label;
+                if (label.length <= 16) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length <= 16) {
+                        currentLine += (currentLine ? ' ' : '') + word;
+                    } else {
+                        if (currentLine) lines.push(currentLine);
+                        currentLine = word;
+                    }
+                });
+                if (currentLine) lines.push(currentLine);
+                return lines;
+            });
+        }
+
+        function createChart(chartId, type, data, options = {}) {
+            const ctx = document.getElementById(chartId).getContext('2d');
+            const defaultOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: { family: 'Inter', size: 14 }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                },
+                scales: {}
+            };
+            return new Chart(ctx, {
+                type: type,
+                data: data,
+                options: { ...defaultOptions, ...options }
+            });
+        }
+        
+        const apiKey = ""; 
+        const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=" + apiKey;
+
+        async function fetchWithExponentialBackoff(url, options, maxRetries = 5) {
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.status === 429 && i < maxRetries - 1) {
+                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        continue;
+                    }
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response;
+                } catch (error) {
+                    if (i === maxRetries - 1) throw error;
+                    const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+        }
+
+        async function generateRecommendation() {
+            const riskArea = document.getElementById('riskArea').value;
+            const outputDiv = document.getElementById('recommendationOutput');
+            const textElement = document.getElementById('recommendationText');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const generateBtn = document.getElementById('generateBtn');
+            
+            outputDiv.classList.remove('hidden');
+            textElement.textContent = '';
+            loadingIndicator.classList.remove('hidden');
+            generateBtn.disabled = true;
+
+            const systemPrompt = `Actúa como un analista de políticas públicas especializado en Gobernanza y Lucha Anticorrupción en Panamá. Tu tarea es generar una recomendación estratégica concisa (máximo 100 palabras) para el Contralor General. La recomendación debe ser profesional, enfocada en la solución y adaptada al contexto institucional panameño (menciona CGR, MP, DGI o UAF si es pertinente). Proporciona solo el texto de la recomendación.`;
+            
+            const userQuery = `Dada la falla operacional crítica: "${riskArea}", genera una recomendación de política dirigida a mitigar este riesgo de corrupción en el sistema fiscal de Panamá.`;
+            
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+            };
+
+            try {
+                const response = await fetchWithExponentialBackoff(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                const generatedText = result.candidates?.[0]?.content?.parts?.[0]?.text || "Error: No se pudo generar la recomendación. Intente de nuevo.";
+                textElement.textContent = generatedText;
+
+            } catch (error) {
+                textElement.textContent = `Error al conectar con la IA. Verifique su conexión o intente más tarde.`;
+                console.error("Gemini API Error:", error);
+            } finally {
+                loadingIndicator.classList.add('hidden');
+                generateBtn.disabled = false;
+            }
+        }
+
+        window.generateRecommendation = generateRecommendation;
+
+        window.onload = function() {
+            const primaryColor = '#3B82F6';
+            const secondaryColor = '#EF4444';
+            const tertiaryColor = '#9CA3AF';
+
+            // Chart 1: CPI Trend (Line Chart)
+            createChart('cpiTrendChart', 'line', {
+                labels: DATA.cpi.labels,
+                datasets: [{
+                    label: 'Puntaje CPI',
+                    data: DATA.cpi.values,
+                    borderColor: primaryColor,
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            }, {
+                scales: {
+                    y: {
+                        min: 30,
+                        max: 40,
+                        title: { display: true, text: 'Puntaje (0-100)' }
+                    },
+                    x: {
+                        title: { display: true, text: 'Año' }
+                    }
+                }
+            });
+
+            // Chart 2: Audit Focus (Donut Chart)
+            createChart('auditFocusChart', 'doughnut', {
+                labels: wrapLabels(DATA.auditFocus.labels),
+                datasets: [{
+                    data: DATA.auditFocus.values,
+                    backgroundColor: [primaryColor, tertiaryColor, secondaryColor, '#1E3A8A'],
+                    hoverOffset: 4
+                }]
+            });
+
+            // Chart 3: Control Time Comparison (Bar Chart)
+            createChart('controlTimeChart', 'bar', {
+                labels: wrapLabels(DATA.controlTime.labels),
+                datasets: [{
+                    label: 'Días Promedio',
+                    data: DATA.controlTime.values,
+                    backgroundColor: [primaryColor, secondaryColor],
+                    borderRadius: 5
+                }]
+            }, {
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Días' }
+                    }
+                }
+            });
+
+            // Chart 4: Cooperation Obstacles (Stacked Bar Chart)
+            const obstacleDatasets = DATA.obstacles.values.map(item => ({
+                label: item.name,
+                data: item.data,
+                backgroundColor: item.color,
+                stack: 'stack'
+            }));
+
+            createChart('obstacleChart', 'bar', {
+                labels: wrapLabels(DATA.obstacles.labels),
+                datasets: obstacleDatasets
+            }, {
+                scales: {
+                    x: {
+                        stacked: true,
+                        title: { display: true, text: 'Obstáculo' }
+                    },
+                    y: {
+                        stacked: true,
+                        min: 0,
+                        max: 100,
+                        title: { display: true, text: 'Severidad (%)' }
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>
